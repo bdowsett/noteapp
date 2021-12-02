@@ -3,10 +3,10 @@
     return mod || (0, cb[Object.keys(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
   };
 
-  // addNote.js
-  var require_addNote = __commonJS({
-    "addNote.js"(exports, module) {
-      addNote = (title2, content2) => {
+  // postNote.js
+  var require_postNote = __commonJS({
+    "postNote.js"(exports, module) {
+      postNote = (title2, content2) => {
         const object = { title: title2, content: content2 };
         fetch("http://localhost:3000/notes", {
           method: "POST",
@@ -20,16 +20,16 @@
           console.error("Error:", error);
         });
       };
-      module.exports = addNote;
+      module.exports = postNote;
     }
   });
 
   // index.js
-  var addNote2 = require_addNote();
+  var addNote = require_postNote();
   var title = document.querySelector("#title");
   var content = document.querySelector("#content");
   var button = document.querySelector("#button");
   button.addEventListener("click", () => {
-    addNote2(title.value, content.value);
+    postNote(title.value, content.value);
   });
 })();

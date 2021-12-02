@@ -1,4 +1,4 @@
-addNote = (title, content) => {
+postNote = (title, content) => {
     const object = {title: title, content: content}
     fetch('http://localhost:3000/notes', {
         method: 'POST', // or 'PUT'
@@ -17,4 +17,4 @@ addNote = (title, content) => {
 
 }
 
-module.exports = addNote
+module.exports = postNote
